@@ -1,0 +1,53 @@
+{
+  "manifest_version": 3,
+  "name": "Steameer",
+  "short_name": "Steameer",
+  "version": "1.0",
+  "version_name": "1.0 by NihilGPT",
+  "author": "NihilGPT",
+  "description": "Your personal Steam inventory and Market companion. Bulk sell, relist, cancel listings, and check inventory values. By NihilGPT.",
+  "icons": {
+    "16": "assets/icon16.png",
+    "32": "assets/icon32.png",
+    "48": "assets/icon48.png",
+    "128": "assets/icon128.png"
+  },
+  "action": {
+    "default_title": "Steameer — 1.0 by NihilGPT",
+    "default_popup": "dist/index.html",
+    "default_icon": {
+      "16": "assets/icon16.png",
+      "32": "assets/icon32.png"
+    }
+  },
+  "minimum_chrome_version": "111",
+  "content_scripts": [
+    {
+      "matches": [
+        "https://steamcommunity.com/id/*/inventory*",
+        "https://steamcommunity.com/profiles/*/inventory*",
+        "https://steamcommunity.com/market*"
+      ],
+      "js": [
+        "core.js",
+        "steam.js",
+        "app.js"
+      ],
+      "world": "MAIN",
+      "run_at": "document_idle"
+    }
+  ],
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEA1VtB6075FEgL7ORPBwcfR2hXhOXZ92Wg/s87+Odt4ix+NSzKTcnZ9/ln6YIV7sVO/7B8kkL1j5zFUpUGrxTv/+dhs9Vprz1iziulktdLhPHpwoRE8PgmSz5sItmqsArNFEFm4zEkZRjNgZaIG0bL/5BmkE2CjAPUjhYBiVQyFPYaFjGjd077ZMkbmiVCVdyk+8GiUjOlroX6cE9jO04CZW+VikuAU5jLoNzd50WOHDVeMQoukFUtVAIYv1IWvbUYfaseo8t/Z47jF2KivXoggAXFrV/uJiTvMot13XstxpR5yG8xnmZHnh42Q6nY7Ke/HYzTYnB9ftftAFpMBVAj6wIDAQAB",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "js/clean-market-core.js",
+        "js/clean-market-steam.js",
+        "js/clean-market-app.js"
+      ],
+      "matches": [
+        "https://steamcommunity.com/*"
+      ]
+    }
+  ]
+}
