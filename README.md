@@ -234,6 +234,25 @@ Steameer/
 
 ---
 
+## 📦 How to Release
+
+To build and publish a new packaged Chromium extension release via GitHub Actions:
+
+1. Update the version in `manifest.json` if needed and commit your changes.
+2. Create and push a version tag:
+   ```bash
+   git tag v1.0.0
+   git push --tags
+   ```
+3. GitHub Actions (`.github/workflows/build-installers.yml`) will automatically package the extension into `steameer-<version>-chromium-any.zip`, upload it to the **`installers`** workflow artifact, and attach it to a new **GitHub Release**.
+
+You can also trigger a build manually from the **Actions** tab (**Build Extension Package** → **Run workflow**).
+
+- **Download release packages:** [GitHub Releases](https://github.com/projectGloria/Steameer/releases)
+- **Download manual build artifacts:** **Actions** tab → select the workflow run → **`installers`** artifact
+
+---
+
 ## 📜 License & Credits
 
 - **Steameer**: Created by **NihilGPT**.
